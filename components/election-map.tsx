@@ -29,16 +29,14 @@ const ElectionMap: FC<MapProps> = ({ map }) => {
 
   return (
     <svg ref={containerRef} viewBox="0 0 100 100">
-   {map.features.map((feature, i) => {  return (  <g key={`${feature.properties!.lganame }${i }`}
-               className="regions">
-
-            <path
-             d={path(feature)!}
-              stroke="#333"
-            />
-          );
-        
-      </g>)})}
+      {map.features.map((feature, i) => {
+        return (
+          <g key={`${feature.properties!.lganame}${i}`} className="regions">
+            <path d={path(feature)!} stroke="#333" strokeWidth={0.5} />
+            );
+          </g>
+        );
+      })}
     </svg>
   );
 };
